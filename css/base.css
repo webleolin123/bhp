@@ -1,0 +1,154 @@
+/*样式重置*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font:14px "Arial" ;
+}
+html{
+    width: 100%;
+}
+body{
+    min-width: 1320px;
+    min-height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    background: #fafafa;
+}
+a{
+    text-decoration: none!important;
+}
+a:hover{
+    color: #2ec3ee;
+    text-decoration: underline;
+    cursor: pointer;
+}
+b{
+    font-weight: normal;
+}
+i{
+    font-style: normal;
+}
+ul,ol{
+    list-style: none;
+}
+ul,ol,li,p{
+    padding: 0;
+    margin: 0;
+}
+/*input{*/
+    /*border:11px solid transparent ;*/
+    /*padding: 10px 16px;*/
+/*}*/
+/*全局样式*/
+.container{
+    width: 1320px;
+    margin: 0 auto;
+    min-height: 50px;
+}
+.container:before{
+    content: '';
+    display: table;
+}
+.container:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+/*主要内容content*/
+.main{
+    width:1108px;
+    margin: 0 auto;
+    float: right;
+    min-height: 750px!important ;
+    /*overflow: hidden;*/
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.btn{
+    color: #333;
+    border: 1px solid transparent;
+}
+.relative{
+    position: relative;
+}
+/*自定义样式*/
+.marginBottom100{
+    margin-bottom: 100px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.choose_icon{
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../img/on_choose.png")no-repeat center;
+}
+input.choose{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #B1B1B1;
+    vertical-align: middle;
+    /*opacity: 0.5;*/
+    background: #fff;
+    border-radius: 2px;
+    border: none;
+}
+.selected{
+    display: block;
+}
+.pointer{
+    cursor: pointer!important;
+}
+.auto{
+    cursor: auto!important;
+}
+.getValiCode{
+    display:inline-block;
+    width: 124px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #2ec3ee;
+    background: #ffffff;
+    border: 1px solid #2ec3ee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.getValiCode:hover{
+    text-decoration: none;
+}
+.sanjiao{
+    position: absolute;
+    bottom: 53px;
+    right: 47px;
+}
+.marginLeft10{
+    margin-left: 10px;
+}
+/*清除浮动*/
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+input{
+    color: #000!important;
+}

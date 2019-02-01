@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    /*主要内容content*/
+    .main{
+        width:1108px;
+        margin: 0 auto;
+        float: right;
+        min-height: 50px ;
+        /*overflow: hidden;*/
+    }
+    .top{
+        width: 100%;
+        height: 62px;
+    }
+    .title_left{
+        width: 1068px;
+        margin-left:20px;
+        height:62px;
+        line-height:62px;
+        text-align: left;
+    }
+    .top> .title_left{
+        border-bottom: 1px solid #ebeff0;
+    }
+    .title_left>span{
+        display: inline-block;
+        font-size: 16px;
+        color: #1D1C1C;
+    }
+    .title_left>span:first-child{
+        font-size: 16px;
+        color: #1D1C1C;
+    }
+    .ERC-20_notice{
+        width: 1038px;
+        text-align: left;
+        /*margin-bottom: 400px;*/
+    }
+    .ERC-20_notice>div:first-child{
+        margin-top: 68px;
+    }
+    .ERC-20_notice>div>p{
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-left: 45px;
+        color: #1D1C1C;
+    }
+    .ERC-20_notice>div>p:nth-child(3){
+        margin-top: 15px;
+        margin-bottom: 68px;
+    }
+    .save_btn{
+        display: inline-block;
+        width: 124px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        color: #ffffff!important;
+        font-size: 16px;
+        border-radius: 4px;
+        border:none;
+        background: #2ec3ee;
+        margin-top: 42px;
+        outline: none;
+    }
+    .ERC-20_notice>div:last-child{
+        text-align: center;
+    }
+    ::-webkit-input-placeholder{
+        text-align: center;
+    }
+    .add_notice{
+        width: 1038px;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .add_notice>span{
+        display: inline-block;
+        margin-left: 14px;
+        margin-top: 32px;
+        margin-bottom: 20px;
+        color: #58c9ff;
+    }
+    .add_notice>div>p{
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+        margin-left: 45px;
+        color: #5a5a5a;
+    }
+    .super_node_input_container{
+        margin: 0 auto;
+        width: 688px;
+        height: 214px;
+        border: 1px solid #EBEFF0;
+        border-radius: 4px;
+        text-align: center;
+        margin-top: 100px;
+
+    }
+    .super_node_input_container>div:first-child{
+        margin: 0 auto;
+        margin-top: 55px;
+        margin-bottom: 26px;
+    }
+    .super_node_input_container>div>input{
+        text-align: center;
+        display: inline-block;
+        width: 264px;
+        height: 42px;
+        border: 1px solid #EBEFF0;
+        font-size: 14px;
+        color: #DADADA;
+        border-radius: 4px;
+        outline: none;
+    }
+    .super_node_input_container>div>label{
+        font-size: 14px;
+        color: #1D1C1D;
+        margin-right: 20px;
+        width: 84px;
+        text-align: left;
+        display: inline-block;
+    }
+    .super_node_notice>div:last-child{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .blurBorder{
+        border:1px solid #2ec3ee!important;
+    }
+    input:focus{
+        border: 1px solid #2ec3ee!important;
+        color:#1D1C1D;
+    }
+</style>
+<body>
+<!--ERC-20-->
+<div class="main">
+    <div class="top">
+        <div class="title_left left">
+            <span class="string-ERC20 my_node_invitation"></span>
+        </div>
+    </div>
+    <div class="string-ERC20 super_node_notice add_notice">
+        <span class="fill_node_notices"></span>
+        <div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div  class="super_node_input_container">
+                <div>
+                    <label for="super_node_code" class="my_input_node_code"></label>
+                    <input type="text" id="super_node_code" class="please_input_node_code string-ERC20_addr"/>
+                </div>
+                <div>
+                    <label for="super_node_code" class="my_input_rrcc_account"></label>
+                    <input type="text" id="rrcc_account" class="non_need_rrcc_account string-ERC20_addr"/>
+                </div>
+            </div>
+        </div>
+        <div class="toSave">
+            <input type="submit" class="save_btn pointer string_save"/>
+        </div>
+    </div>
+</div>
+<script>
+    function loadProperties(language){
+        jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
+            name:'strings', //资源文件名称
+            language:language,
+            path:'components/i18n/resources/i18n/', //资源文件路径
+            mode:'map', //用Map的方式使用资源文件中的值
+            callback: function() {//加载成功后设置显示内容
+//                我的节点邀请码
+                $('.my_node_invitation').html($.i18n.prop('my_node_invitation'));
+//                填写邀请码须知
+                $('.fill_node_notices').html($.i18n.prop('fill_node_notices'));
+                // 填写邀请码须知 1234
+                var fill_node_notices=['fill_node_notices_1','fill_node_notices_2',
+                    'fill_node_notices_3','fill_node_notices_4','fill_node_notices_5'];
+                each_menu('.super_node_notice>div>p',fill_node_notices);
+//              请输入您的邀请码
+                $('.please_input_node_code').attr('placeholder',$.i18n.prop('please_input_node_code'));
+//                我的邀请码
+                $('.my_input_node_code').html($.i18n.prop('my_input_node_code'));
+//              请输入您的邀请码
+                $('.non_need_rrcc_account').attr('placeholder',$.i18n.prop('non_need_rrcc_account'));
+//                人人矿产账号
+                $('.my_input_rrcc_account').html($.i18n.prop('my_input_rrcc_account'));
+//                 保存
+                $('.string_save').attr('value',$.i18n.prop('string_save'));
+            }
+        });
+    }
+    var language = window.localStorage.language;
+    if(!language){
+        window.localStorage.language='zh-CN';
+        language='zh-CN';
+    }
+    loadProperties(language);
+    function click_borderColor(selector1,class1){
+        $(selector1).each(function(){
+            var $tar=$(this);
+            $tar.blur(function(){
+                if($tar.val()!=''){
+                    $tar.addClass(class1);
+                }else{
+                    $tar.removeClass(class1);
+                }
+            });
+        });
+    }
+    $(function(){
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+//        点击输入框及有文字效果
+        click_borderColor('.super_node_notice input','blurBorder');
+        $('.save_btn').off('click').click(function(){
+            var superNodeCode= $('#super_node_code').val();
+            var mineAccountEveryOne= $('#rrcc_account').val();
+            $.ajax({
+                type:"POST",
+                url:config.domain+"/api/v2/user/add_node_user",
+                data:{
+                    token:token,
+                    language:language,
+                    superNodeCode:superNodeCode,
+                    mineAccountEveryOne:mineAccountEveryOne
+                },
+                dataType:"json",
+                success:function(res){
+                    console.log("这是超级节点编码");
+                    console.log(res);
+                    alert(res.msg);
+                    if(res.code==200) {
+
+                    }else{
+                        $('#super_node_code').val('');
+                        $('#rrcc_account').val('');
+                    }
+                },
+                error:function(){
+                    alert($.i18n.prop('network_error'));
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

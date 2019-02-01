@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>BHP</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <!--<link rel="stylesheet" href="css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/setStyleSheet.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header>
+        <div class="container">
+            <!--数据显示left-->
+            <div class="header_title left"></div>
+            <ul class="header_data left">
+                <li>
+                    <span class="data_name"></span>
+                    <span class="data_value"></span>
+                </li>
+                <li>
+                    <span class="data_name"></span>
+                    <span class="data_value"></span>
+                </li>
+                <li>
+                    <span class="data_name"></span>
+                    <span class="data_value"></span>
+                </li>
+                <li>
+                    <span class="data_name"></span>
+                    <span class="data_value"></span>
+                </li>
+            </ul>
+            <!--国家切换right-->
+            <div class="header_lang right relative">
+                <ul class="lang_choose">
+                    <li data-lang="zh-CN" data-css="css/cn.css">CN</li>
+                    <li data-lang="EN" data-css="css/en.css">EN</li>
+                </ul>
+                <span class="flag_icon">
+                    <!--<img src="img/guoqibg.png" alt=""/>-->
+                </span>
+                <span class="lang"></span>
+                <span class="toggle_icon"></span>
+            </div>
+        </div>
+    </header>
+    <!--导航条-->
+    <nav>
+        <div class="container">
+            <!--logo-->
+            <div class="logo left">
+                <img src="img/logo02.png" alt=""/>
+            </div>
+            <!--nav-menu-->
+            <ul class="nav-menu left ">
+                <li><a href="https://bhpcash.io/bhpc/index.html" target="_blank" class="index skiptTo_index"></a></li>
+                <li><a href="javascript:" data-url="up_bibiFiance.html"></a></li>
+                <li><a href="javascript:" data-url="up_anCenter.html"></a></li>
+                <li><a href="javascript:" data-url="up_latestEvents.html"></a></li>
+                <!--<li><a href="javascript:" data-url="up_agent_charge.html">代理充值</a></li>-->
+            </ul>
+           <!--exit-->
+            <div class="exit right">
+                <span class="exit_icon pointer"></span>
+            </div>
+            <!--nav-accountInfo-->
+            <div class="nav-accountInfo right relative">
+                <span class="mail_info"></span>
+                <span class="drop_down"></span>
+                <!--hover下拉框-->
+                <div class="drop_down_contianer">
+                    <ul>
+                        <li><a href="javascript:" data-url="myAssets.html"></a></li>
+                        <li><a href="javascript:" data-url="rechargeRecord.html"></a></li>
+                        <li><a href="javascript:" data-url="addressManagement.html"></a></li>
+                        <li><a href="javascript:" data-url="safe_settings.html"></a></li>
+                        <li><a href="javascript:" data-url="ERC-20.html"></a></li>
+                        <li><a href="javascript:" data-url="super_node.html"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--主体-->
+<!--iframe1-->
+    <div class="iframe1" id="body_main">
+        <div class="container">
+            <!--侧边栏-->
+            <aside>
+                <ul class="aside_items">
+                    <li><span></span></li>
+                    <li>
+                        <span class="user_mon"></span>
+                        <ul class="item item-myMoney">
+                            <!--<li><a href="javascript:" data-link="myAssets.html" class="active">我的资产</a></li>-->
+                            <li><a href="javascript:"  data-url="myAssets.html" class="active"></a></li>
+                            <li><a href="javascript:" data-url="rechargeRecord.html"></a></li>
+                            <!--<li><a href="javascript:" data-url="officialCharge.html">官方代充</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="my_mon"></span>
+                        <ul class="item item-myFinance">
+                            <li><a href="javascript:" target="_blank" data-url="bibiFinance.html"></a></li>
+                            <li><a href="javascript:" data-url="financeRecord.html"></a></li>
+                            <!--<li><a href="javascript:" data-url="YGM.html"></a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="safe"></span>
+                        <ul class="item item-mySecurity">
+                            <li><a href="javascript:" class="add" data-url="addressManagement.html"></a></li>
+                            <li><a href="javascript:" data-url="personalInfo.html"></a></li>
+                            <li><a href="javascript:" data-url="safe_settings.html"></a></li>
+                            <li><a href="javascript:" data-url="ERC-20.html"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <!--iframe存放各页面-->
+<!--iframe存放各页面-->
+            <div class="iframe2"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="container relative myFooterText ">
+            <p></p>
+            <p></p>
+            <!--<div class="footer_icon">-->
+                <!--<ul>-->
+                    <!--<li><a href="https://www.instagram.com/BHP_Finance/"><img src="img/footer/in.png" alt=""/></a></li>-->
+                    <!--<li><a href="https://twitter.com/BHPFinance"><img src="img/footer/twitter.png" alt=""/></a></li>-->
+                    <!--<li><a href="https://www.facebook.com/BHPFinance/"><img src="img/footer/facebook.png" alt=""/></a></li>-->
+                    <!--<li><a href="https://t.me/bhpfinance"><img src="img/footer/f.png" alt=""/></a></li>-->
+                    <!--<li><a href="https://medium.com/@bhpcash"><img src="img/footer/m.png" alt=""/></a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div class="footer_scanCode">
+            </div>
+        </div>
+    </footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/Tools.js"></script>
+<script type="text/javascript" src="components/i18n/resources/lib/jquery.i18n.properties-1.0.9.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

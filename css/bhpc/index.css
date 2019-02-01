@@ -1,0 +1,705 @@
+
+body{
+    background: #fafafa;
+}
+.navbar-custom .navbar-nav > .open > a:focus,.navbar-custom .navbar-nav > .open > a:hover, .navbar-custom .navbar-nav > .open > a{
+    color: white !important;
+}
+.navbar-custom ul.dropdown-menu.scroll-menu{
+    background-color: #2ec3ee !important;
+}
+.navbar-custom.affix {
+    background-color: #2ec3ee !important;
+    padding: 5px;
+}
+.navbar-custom .navbar-nav > .active a{
+    background-color: transparent;
+    color: white;
+}
+.navbar-custom .navbar-nav > .active a:focus, .navbar-custom .navbar-nav > .active a:hover{
+    background-color: transparent;
+    color: white;
+}
+.navbar-custom .nav .dropdown .dropdown-menu li a:focus, .navbar-custom .nav .dropdown .dropdown-menu li a:hover, .navbar-custom .nav li a:focus, .navbar-custom .nav li a:hover{
+    color: white;
+}
+.header-top{
+    margin-top: 190px;
+}
+.header-top >p:first-child{
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.header-top >p:nth-child(2){
+    margin-top: 28px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.header-top >p:nth-child(3){
+    margin-top: 90px;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 0;
+    width: 80%;
+    margin-left: 10%;
+}
+.header-info{
+    width: 100%;
+    height: 96px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 80px;
+}
+.left-container,.right-container{
+    line-height: 96px;
+    height: 96px;
+}
+.right-container{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.left-container{
+    text-align: center;
+    border-right: 1px dashed rgb(193,193,193);
+}
+.header-info .left-container span:first-child{
+    color: rgb(11,11,11);
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.header-info .left-container span:nth-child(2){
+    color: #2ec3ee;
+    font-size: 22px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+.header-info .right-container{
+    padding-right: 0;
+}
+.header-info .right-container span a{
+    color: #2ec3ee!important;
+    cursor: default;
+}
+.header-info .right-container .header-btn{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 250px;
+    height: 50px;
+    font-size: 24px;
+    background-color:#2ec3ee ;
+    color: white;
+}
+.header-btn>a{
+    color: #fff;
+    text-decoration: none;
+}
+.header-info .right-container span a{
+    font-size: 18px;
+    vertical-align: middle;
+    color: rgb(11,11,11);
+}
+.header-info .right-container span:last-child a{
+    color: #2ec3ee ;
+}
+/***************************倒计时*****************************/
+.header-bottom{
+    background: #2ec3ee;
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    text-align: center;
+}
+.time-container{
+    height: 120px;
+}
+.time-info span{
+    color: white;
+    font-size: 16px;
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+.time-detail span:nth-child(n){
+    font-size: 28px;
+    color: #2ec3ee;
+    background-color: white;
+    width: 8%;
+    height: 48px;
+    float: left;
+    margin: auto 1.5%;
+    box-sizing: content-box;
+    border-radius: 5px;
+}
+.time-detail span:nth-child(3n){
+    background-color: transparent;
+    width: 1%;
+}
+.header-bottom p{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0;
+    height: 40px;
+}
+.header-bottom p:first-child{
+    margin-top: 30px;
+}
+.header-bottom .btn{
+    width: 246px;
+    height: 58px;
+    background-color: rgb(237,198,52);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 31px;
+    line-height: 40px;
+}
+section{
+    border-bottom: none;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+}
+section.network{
+    margin-top: 90px;
+}
+.market{
+    padding-top: 74px;
+    background-color: rgb(250,250,250);
+}
+.market .container{
+    background-color: rgb(238,238,238);
+    height: 550px;
+}
+.market .title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    color: #2ec3ee;
+    height: 172px;
+    line-height: 172px;
+}
+.market .base-info{
+    background-color: #2ec3ee;
+    text-align: center;
+    color: white;
+    height: 62px;
+}
+.base-info >div> span:first-child{
+    color: rgb(193,225,236);
+    font-size: 20px;
+    height: 62px;
+    line-height: 62px;
+}
+.base-info >div> span:last-child{
+    color: rgb(226,248,255);
+    font-size: 24px;
+    height: 62px;
+    line-height: 62px;
+}
+.detail-info{
+    padding: 74px 60px;
+}
+.detail-info .item{
+    width: 14%;
+    float: left;
+    text-align: center;
+    height: 154px;
+    border-right: 1px solid #2ec3ee;
+    padding-top: 40px;
+}
+.detail-info .item .f-black{
+    color: black;
+    font-weight: bold;
+}
+.detail-info .item .f-blue{
+    color: #2ec3ee;
+    font-weight: bold;
+}
+/*******************算力银行业务***************************/
+.service{
+    background-color: rgb(250,250,250);
+    padding-top: 0;
+}
+.service .container{
+    padding: 0;
+}
+.service .title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    color: #2ec3ee;
+    height: 172px;
+    line-height: 172px;
+}
+.service .service-item{
+    height: 480px;
+    width: 100%;
+    position: relative;
+}
+.service-item img{
+    width: 100%;
+    height: 205px;
+    display: block;
+}
+.service-item >p:nth-child(2){
+    margin-top: 32px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(11,11,11);
+    padding-left: 30px;
+}
+.service-item >p:nth-child(3){
+    margin-top: 32px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgb(115,133,153);
+    padding-left: 30px;
+}
+.service-item >p:nth-child(4){
+    position: absolute;
+    bottom: 33px;
+    font-size: 16px;
+    color: rgb(11,11,11);
+    margin-bottom: 0;
+    padding-left: 30px;
+    font-weight: bold;
+    width: 100%;
+}
+.service-item >p:nth-child(4) a{
+    text-decoration: none;
+}
+.service-item >p:nth-child(4) a:hover{
+    color:#2ec3ee;
+}
+.service-item >p:nth-child(4):before{
+    content: url('../../img/bhpc/v1/icon/blue_right.png');
+    padding-right: 1%;
+}
+/***************************算力银行账户*******************/
+.BHP-account{
+    font-size: 38px;
+    color:#2ec3ee;
+    background-color: rgb(250,250,250);
+    margin-top: 0;
+}
+.BHP-account .title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    color: #2ec3ee;
+    margin-top: 25px;
+}
+.BHP-account .sub-title{
+    font-size: 18px;
+    color: #2ec3ee;
+    margin-top: 30px;
+    text-align: center;
+}
+.BHP-account .item{
+    margin-top: 50px;
+    height: 220px;
+    margin-bottom: 50px;
+    position:relative ;
+}
+.BHP-account .item img{
+    position: absolute;
+    top: 0;
+    right: -3%;
+}
+.BHP-account .item > p{
+    font-size: 18px;
+    color: #738599;
+    width: 100%;
+    text-align: left;
+}
+.BHP-account .item > p:not(:first-child):before{
+    content:url("../../img/bhpc/v1/icon/gray_right.png");
+    padding-right: 2%;
+}
+.BHP-account .item > p:first-child{
+    font-size: 28px;
+    color: rgb(11,11,11);
+}
+/*********************算力银行全球网络*********************/
+.network{
+    height: 970px;
+}
+.network .title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    color:#2ec3ee;
+    margin-top: 128px;
+}
+.network .sub-title{
+    font-size: 16px;
+    color:#2ec3ee;
+    margin-top: 30px;
+    text-align: center;
+}
+.network img{
+    display: block;
+    margin: 100px auto 0;
+}
+.artical .title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    color: #2ec3ee;
+    margin-top: 128px;
+}
+.artical .sub-title{
+    font-size: 18px;
+    color: #2ec3ee;
+    margin-top: 30px;
+    text-align: center;
+}
+.artical .content{
+    margin-top: 100px;
+    height: 600px;
+}
+.artical .left-item{
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+}
+.artical .left-item img{
+    float: left;
+    width: 100%;
+    height: 248px;
+    max-width: 248px;
+    max-height:144px;
+}
+.artical .left-item .detail{
+    float: left;
+    padding-left: 20px;
+}
+.artical .detail .arc-title{
+    width: 100%;
+    font-size: 14px;
+    color: rgb(11,11,11);
+    line-height: 20px;
+    height: 40px;
+}
+.artical .detail .arc-detail{
+    width: 100%;
+    font-size: 12px;
+    color: rgb(115,133,153);
+    margin-top: 25px;
+}
+.artical .detail .more{
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgb(11,11,11);
+    display: block;
+    text-decoration: none;
+}
+.artical .detail .more:hover{
+    color: #2ec3ee;
+}
+a.more:before{
+    content: url('../../img/bhpc/v1/icon/blue_right.png');
+    padding-right: 1%;
+}
+.artical .right-item{
+    height: 581px;
+    padding: 30px;
+    background-color:#2ec3ee;
+}
+.artical .right-item .notic-title{
+    font-size: 28px;
+    color: white;
+}
+.artical .right-item .notic li{
+    min-height: 120px;
+    line-height: 120px;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px dashed white;
+    text-decoration: none;
+}
+.artical .right-item .notic li a{
+    color: white;
+    text-decoration: none;
+}
+.artical .btn1{
+    color:#2ec3ee;
+    border: 1px solid #2ec3ee;
+    font-size: 24px;
+    height: 66px;
+    line-height: 66px;
+    width: 353px;
+    text-align: center;
+    margin: 80px auto auto;
+    display: block;
+}
+.btn1 a{
+    text-decoration: none;
+    color: #2ec3ee;
+}
+/*************************合作伙伴*******************/
+.partner{
+    height: 600px;
+    margin-bottom: 191px;
+}
+.partner .title{
+    width: 100%;
+    height: 191px;
+    line-height: 191px;
+    text-align: center;
+    font-size: 48px;
+    color: #2ec3ee;
+    margin-top: 350px;
+    background: url("../../img/bhpc/v1/icon/TextChange_bg.png")no-repeat center;
+}
+.partner .content{
+    margin-top: 80px;
+}
+.partner .container{
+    margin-top: 40px;
+}
+.partner img{
+    border: none;
+}
+.arrow_left,.arrow_right{
+    width: 17px;
+    height: 28px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+.arrow_left{
+    left: 50%;
+    background: url('../../img/bhpc/v1/icon/icon_left.png')no-repeat center;
+}
+.arrow_right{
+    background: url('../../img/bhpc/v1/icon/icon_right.png')no-repeat center;
+    right: 50%;
+}
+.navbar-nav > li{
+    text-align: center;
+}
+.carousel-control.left,.carousel-control.right{
+    background-image:-webkit-linear-gradient(left,rgba(1,0,0,0) 0%,rgba(0,0,0,0) 100%);
+}
+/******************自定义样式及补丁******************/
+.pd_left{
+    padding-left: 10%;
+}
+.marginTop5px{
+    margin-top: 5px;
+}
+.bottom_active{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid #fff;
+    left: 38%;
+    width: 25%;
+}
+a[data-slide="prev"],a[data-slide="next"]{
+    width: 30%;
+    height: 35%;
+    margin-top:10%;
+    opacity: .5;
+}
+/*******************************媒体查询***************************************************/
+@media (min-width: 1376px){
+    .container {
+        width: 1376px;
+    }
+}
+@media (max-width: 768px){
+    .header-info .right-container .header-btn{
+        margin-top: 0!important;
+        font-size: 20px;
+    }
+    .header-info .left-container span:last-child{
+        font-size: 20px;
+        height:60px;
+    }
+    .left-container{
+        margin-bottom: 40px;
+        height: 50px!important;
+        line-height:25px;
+    }
+    .header-info .left-container span:first-child{
+        font-size: 15px!important;
+    }
+    .right-container{
+        line-height: 55px;
+        height: 55px!important;
+    }
+    .login{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .partner .title{
+        font-size: 32px!important;
+        background-size: 100% auto;
+    }
+    .container{
+        width: 100%;
+    }
+    .navbar-brand img{
+        width: 120px !important;
+        height: 40px !important;
+    }
+    .header-pd{
+        /*height: 700px;*/
+        height: 850px;
+    }
+    .header-pd .header-top{
+        margin-top: 60px;
+    }
+    .header-top >p:nth-child(3){
+        margin-top: 40px;
+    }
+    .header-info{
+        margin-top: 40px;
+    }
+    .header-pd .right-container span:first-child a{
+        color: white;
+    }
+    .header-pd .right-container span:last-child a{
+        color: #2ec3ee;
+    }
+    .header-bottom{
+        margin-top: 120px;
+        position: relative;
+    }
+    .header-bottom p{
+        color: black;
+    }
+    .header-info .right-container .header-btn{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .header-info{
+        font-size: 18px;
+        height: 60px;
+    }
+    /*算力现金行情*/
+    .market{
+        height: 1100px;
+        margin-top: -84px;
+    }
+    .market .container{
+        height: 1000px;
+    }
+    .market .base-info{
+        height: 124px;
+    }
+    .market .base-info >div> span:first-child,.base-info >div> span:last-child{
+        font-size: 12px;
+    }
+    .market .detail-info .item{
+        min-width: 50%;
+        border-bottom: 1px solid #2ec3ee;
+    }
+    .market .detail-info .item:nth-child(2n){
+        border-right: 0;
+    }
+    .rise{
+        color:#2ec3ee!important;
+    }
+    .fall{
+        color: red !important;
+    }
+    /*算力银行全球网络*/
+    .network {
+        background-size:100% auto;
+        height: 200px;
+    }
+    .network .title{
+        font-size: 30px;
+        position: relative;
+        margin-top: 0;
+    }
+    .network .sub-title{
+        position: relative;
+        margin-top: 25px;
+    }
+    .network img{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .artical{
+        height: 2020px;
+    }
+    .artical .content{
+        height: 1750px;
+        margin-top:20px;
+    }
+    .artical .detail .arc-title{
+        height: 60px;
+        line-height: 20px;
+    }
+    .artical .title{
+        font-size: 30px;
+        margin-top: 250px;
+    }
+    .artical .right-item{
+        margin-top: 1200px;
+        position: relative;
+        width: 100%;
+    }
+    .artical .right-item .notic li{
+        line-height: 50px;
+    }
+    .artical .right-item .notic-title{
+        font-size: 24px;
+    }
+    .partner .content{
+        margin-top: 0;
+    }
+    .footers {
+        display: flex;
+        flex-direction: column;
+    }
+    .footers-list {
+        text-align: left;
+    }
+    .footers-list > h3 {
+        border-bottom: 1px solid #FFFFFF;
+        padding-bottom: 10px;
+    }
+    .footers-list > div {
+        display: flex;
+        flex-direction: column;
+    }
+    .footers-list > div > a,
+    .footers-list > div > div > div > div > a {
+        color: #FFFFFF;
+        margin: 0 4px;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+    .carousel-inner .item:nth-child(1) .header-bg{
+        background: url('../../img/bhpc/v1/banner_IOS_01.jpg')!important;
+        background-size: 100% auto !important;
+    }
+    .carousel-inner .item:nth-child(2) .header-bg{
+        background: url('../../img/bhpc/v1/banner_IOS_02.jpg')!important;
+        background-size: 100% auto !important;
+    }
+    .artical .btn1{
+        width: 200px;
+        font-size: 14px;
+    }
+    .BHP-account .item > p:first-child{
+        word-break:break-all;
+    }
+    .BHP-account .item{
+        padding-left:0;
+    }
+}

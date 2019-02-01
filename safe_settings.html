@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    /*安全设置*/
+    .main{
+        width:1108px;
+        float: right;
+        /*padding-bottom:500px ;*/
+    }
+    .top{
+        width: 100%;
+        height: 62px;
+    }
+    .title_left{
+        width: 1068px;
+        margin-left:20px;
+        height:62px;
+        line-height:62px;
+        text-align: left;
+    }
+    .top> .title_left{
+        border-bottom: 1px solid #ebeff0;
+    }
+    .title_left>span:first-child{
+        font-size: 16px;
+    }
+    .title_left>span{
+        font-size: 16px;
+        color:#1D1C1C;
+    }
+    .top:not(:first-child){
+        margin-left: 15px;
+    }
+    .top:not(:first-child)>.title_left>span:first-child{
+        font-size: 14px;
+    }
+    .top:not(:first-child)>.title_left>span:nth-child(3){
+        font-size: 14px;
+        color: #B1B1B1;
+    }
+    .title_left>img{
+        display: inline-block;
+        margin-left: 116px;
+        margin-right: 80px;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+    }
+    .title_left{
+        height: 72px;
+        line-height: 72px;
+    }
+    .safe_title{
+        height: 62px;
+        line-height: 62px;
+    }
+    .title_left>div>span{
+        display: inline-block;
+        color: #2ec3ee;
+        font-size: 14px;
+        margin-right: 35px;
+        height: 72px;
+        line-height: 72px;
+    }
+    .title_left>div{
+        height: 72px;
+        line-height: 72px;
+    }
+    .title_left>div>img{
+        cursor: pointer;
+        margin-right: 35px;
+        width: 52px;
+        height: 23px;
+        vertical-align: middle;
+    }
+    .switch{
+        display: inline-block;
+        background: url("img/safe_settings/ON.png")no-repeat center;
+        width: 52px;
+        height: 23px;
+        cursor: pointer;
+        margin-right: 35px;
+        vertical-align: middle;
+    }
+    .close{
+        display: inline-block;
+        background: url("img/safe_settings/OFF.png")no-repeat center;
+        width: 52px;
+        height: 23px;
+        cursor: pointer;
+        margin-right: 35px;
+        vertical-align: middle;
+    }
+    meter{
+        width: 233px;
+        height: 16px;
+        background: #f0f0f0;
+    }
+    .level{
+        text-align: center;
+        display: inline-block;
+        font-size:8px!important;
+        position: relative;
+        top: 0;
+        /*低 value:60 right:212*/
+        right: 212px;
+        /*中 value:154 right:164*/
+        /*right: 164px;*/
+        /*高 value:233 right:134*/
+        /*right: 134px;*/
+    }
+    meter{
+        border-radius: 10px;
+        margin-left: 5px;
+    }
+    meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value{
+        border-radius: 10px;
+    }
+</style>
+<body>
+<!--安全>设置-->
+<div class="main">
+    <div class="top safe_title">
+        <div class="title_left left">
+            <span class="string_Security_setting"></span>
+        </div>
+    </div>
+    <div class="top">
+        <div class="title_left left">
+            <span class="string_Login_password"></span>
+            <img src="img/safe_settings/grenn.png" alt=""/>
+            <span class="string_Security_level"></span>
+            <meter id="m1"value="69"min="0" max="233" optimum="200" low="70" high="155" class="grade"></meter>
+            <div class="right">
+                <span class="pointer modify string_Modify"></span>
+            </div>
+            <span class="level"></span>
+        </div>
+    </div>
+    <div class="top">
+        <div class="title_left left">
+            <span class="string_Transaction_password"></span>
+            <img src="img/safe_settings/jingap.png" alt=""/>
+            <span class="string_tradeInwithdrawal"></span>
+            <div class="right traPassword"></div>
+        </div>
+    </div>
+    <div class="top marginBottom">
+        <div class="title_left left">
+            <span class="string_Push"></span>
+            <img src="img/safe_settings/jingap.png" alt=""/>
+            <span class="string_pushInfo"></span>
+            <div class="right">
+                <i class="switch"></i>
+                <!--<img src="img/safe_settings/ON.png" alt="" class="switch close"/>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function loadProperties(language){
+        jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
+            name:'strings', //资源文件名称
+            language:language,
+            path:'components/i18n/resources/i18n/', //资源文件路径
+            mode:'map', //用Map的方式使用资源文件中的值
+            callback: function() {//加载成功后设置显示内容
+//                安全设安置
+                $('.string_Security_setting').html($.i18n.prop('string_Security_setting'));
+                //登录密码
+                $('.string_Login_password').html($.i18n.prop('string_Login_password'));
+                //安全级别
+                $('.string_Security_level').html($.i18n.prop('string_Security_level'));
+                //消息推送
+                $('.string_Push').html($.i18n.prop('string_Push'));
+                //交易密码
+                $('.string_Transaction_password').html($.i18n.prop('string_Transaction_password'));
+                //修改
+                $('.string_Modify').html($.i18n.prop('string_Modify'));
+                //交易 提现时使用
+                $('.string_tradeInwithdrawal').html($.i18n.prop('string_tradeInwithdrawal'));
+                //设置后,BHPC将会及时为您的交易,提现等操作发送实时通知
+                $('.string_pushInfo').html($.i18n.prop('string_pushInfo'));
+            }
+        });
+    }
+    var language = window.localStorage.language;
+    if(!language){
+        window.localStorage.language='zh-CN';
+        language='zh-CN';
+    }
+    loadProperties(language);
+    $(function(){
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+//请求is_login 判断是否正常登陆
+        $.ajax({
+            type:"POST",
+            url:config.domain+"/api/v2/user/is_login",
+            data:{
+                token:token,
+                language:language
+            },
+            dataType:"json",
+            success:function(res){
+                console.log("这是is_login个人信息响应");
+                language=window.localStorage.language
+                if(res.code==200) {
+                    var language=window.localStorage.language
+                    var change_setting=language=='zh-CN'?'去设置':'change setting';
+                    var Modify=language=='zh-CN'?'修改':'Modify';
+                    var Low=language=='zh-CN'?'低':'Low';
+                    var Medium=language=='zh-CN'?'种':'Medium';
+                    var High=language=='zh-CN'?'高':'High';
+                    var setingStatus=res.obj.seting;
+//        判断显示去设置还是 已有交易密码 setingStatus表示已设置交易密码
+                    var html="";
+                    if(setingStatus){
+                        html=`<span class="pointer settings my_modify">${Modify}</span>`;
+                        $(".traPassword").html(html);
+                    }else{
+                        html+=`<span class="pointer settings my_settings">${change_setting}</span>`;
+                    }
+                    $(".traPassword").html(html);
+                    //    点击开关切换
+                    $(".switch").click(function(){
+                        $(this).toggleClass("close");
+                    });
+                    //    刻度条
+                    var level=$(".grade").val();
+                    if(level<70&&level>=0){
+                        $(".level").html(Low);
+                    }
+                    else if(level>=70&&level<155){
+                        $(".level").html(Medium);
+                    }
+                    else{
+                        $(".level").html(High);
+                    }
+                    //     点击修改加载登录密码页面
+                    $(".modify").click(function(){
+                        $(".iframe2").load("safe_modify.html");
+                    });
+                    //     点击设置加载交易密码设置页面
+                    $(".my_settings").click(function(){
+                        sessionStorage.setItem('page_flag',4);
+                        $(".iframe2").load("transactionPassword_settings.html");
+                    });
+//        点击修改加载交易密码设置页面
+                    $(".my_modify").click(function(){
+                        $(".iframe2").load("transactionPassword_modify.html");
+                    });
+                }
+                else{
+                    alert(res.msg);
+                    window.localStorage.language=language;
+                    //window.location="login.html";
+                    window.location=config.myWeb+'/login.html';
+                }
+            },
+            error:function(){
+               alert($.i18n.prop('network_error'));
+            }
+        });
+    });
+</script>
+</body>
+</html>

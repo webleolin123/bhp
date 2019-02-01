@@ -1,0 +1,61 @@
+/*myAssets.html 操作css*/
+.table_container>table>tbody>tr>td>a:nth-child(2){
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/*ID_authen_h.html// ID_authen_s.html 操作css*/
+.personal_setting_info>form>div>label:first-child{
+    width: 70px;
+}
+
+.personal_setting_info>form>div>label:first-child{
+    margin-right: 0;
+}
+/*transactionPassword_settings.html.html// transactionPassword_modify.html.html 操作css*/
+.transaction_modify_info>form>div>label:first-child{
+    width: 80px;
+}
+.transaction_modify_info>form>input{
+    margin-left: 62px;
+}
+/*超级节点页面*/
+.super_node_input_container>div>label{
+    width: 84px!important;
+    text-align: left!important;
+}
+/*注册页 密码提示*/
+.user_register>div:nth-child(4)>a{
+    padding-left: 20%;
+}
+/*注册条款*/
+.user_register>div:nth-child(7){
+    padding-left: 33px;
+}
+/*label标签宽度*/
+.user_login>div>label{
+    width: 42px;
+}
+/*登录按钮宽度*/
+.user_login>div:last-child{
+    width: 385px;
+}
+/*忘记密码提示*/
+.user_login>div:nth-child(4){
+    width: 320px;
+}
+/*注册label标签宽度*/
+.user_register>div>label{
+    width: 60px;
+}
+/*注册按钮宽度*/
+.user_register>div:last-child{
+    width: 395px;
+}
+/*重置页面label标签宽度*/
+.user_reset>div>label{
+    width: 66px;
+}
+.user_reset>div:nth-child(4){
+    width: 350px;
+}

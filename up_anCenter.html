@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*公告中心*/
+        /*主要内容content*/
+        .container{
+            width: 1320px;
+            min-height:1000px;
+        }
+        aside{
+            float: right;
+            width: 440px;
+            margin-left: 0;
+        }
+        .main{
+            float: left;
+            width: 880px;
+            margin: 0 auto;
+            min-height: 1135px;
+            border-right: 1px solid #ebeff0;
+        }
+        .title{
+            width:816px;
+            height: 80px;
+            text-align: left;
+        }
+        .title>span{
+            display: inline-block;
+            width: 816px;
+            height: 80px;
+            line-height: 80px;
+            margin-left: 32px;
+            margin-right: 32px;
+            font-size: 24px;
+            color: #2ec3ee;
+        }
+        .content>ul{
+            width: 816px;
+        }
+        .content>ul>li{
+            width: 816px;
+            height: 248px;
+            line-height: 248px;
+            margin-left: 32px;
+            border-top: 1px solid #ebeff0;
+        }
+        .content>ul>li>div{
+            height: 144px;
+            margin-top: 52px;
+            margin-bottom: 52px;
+        }
+        .content>ul>li>div:first-child>img{
+            width: 248px;
+            height: 144px;
+        }
+        .content>ul>li>div:nth-child(2){
+            width: 480px;
+            text-align: left;
+            margin-right: 45px;
+            word-break: break-all;
+            word-wrap:break-word;
+            text-overflow: ellipsis;
+        }
+        .content>ul>li>div:nth-child(2)>p:first-child,  .content>ul>li>div:nth-child(2)>p:nth-child(2){
+            overflow : hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .content>ul>li>div:nth-child(2)>p:first-child{
+            font-size: 20px;
+            color: #1D1C1C;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(2){
+            font-size: 16px;
+            color: #738599;
+            margin-top: 12px;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(3){
+            width: 515px;
+            margin-top: 15px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 21px;
+            line-height: 21px;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(3){
+            vertical-align: middle;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(3)>a{
+            font-size: 16px;
+            color: #0b0b0b;
+            margin-left: 10px;
+            display: inline-block;
+            height: 21px;
+            line-height: 21px;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(3)>a:hover{
+            color: #2ec3ee;
+            text-decoration: none;
+        }
+        .content>ul>li>div:nth-child(2)>p:nth-child(3)>span{
+            display: inline-block;
+            font-size: 16px;
+            color: #738599;
+            height: 21px;
+            line-height: 21px;
+        }
+        /*右边公告栏*/
+        .top{
+            width: 440px;
+            height: 54px;
+            text-align: left;
+            background: url("img/announce_center/huixian.png")no-repeat center;
+        }
+        .top>span{
+            display: inline-block;
+            height: 54px;
+            line-height: 54px;
+            font-size: 18px;
+            color: #2ec3ee;
+            margin-left: 10px;
+        }
+        ul.content{
+            width: 440px;
+            min-height: 1082px;
+        }
+        ul.content>li{
+            width: 440px;
+            height: 96px;
+            line-height: 96px;
+            text-align: left;
+        }
+        ul.content>li>a{
+            display: inline-block;
+            font-size: 16px;
+            color: #1D1C1C;
+            width: 376px;
+            height: 96px;
+            line-height: 96px;
+            border-bottom: 1px dashed #EBEFF0;
+            margin-left: 32px;
+            overflow : hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            word-wrap:break-word;
+            text-overflow: ellipsis;
+        }
+        ul.content>li>a:hover{
+            color: #2ec3ee;
+            text-decoration: none;
+        }
+
+        /*分页 公告页面 特别在底部加margin-bottom 而不是margin-top*/
+        .pagenation{
+            /*margin-top: 32px;*/
+            height: 32px;
+            margin-bottom: 32px;
+            /*position: relative;*/
+            /*bottom: 0;*/
+        }
+        .pagenation>ul{
+            float: right;
+            height: 32px;
+        }
+        .pagenation>ul>li{
+            display: inline-block;
+            height:32px;
+            line-height: 32px;
+            text-align: center;
+        }
+        .pagenation>ul>li:first-child,.pagenation>ul>li:last-child{
+            color: #2ec3ee;
+            margin-right: 27px;
+        }
+        .pagenation>ul>li.forbidden{
+            color: #B1B1B1;
+        }
+        .pagenation>ul>li:last-child{
+            margin-left: 17px;
+        }
+        .pagenation>ul>li>a{
+            display: inline;
+            font-size: 14px;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            color: #2ec3ee;
+            margin-right: 10px;
+        }
+        .pagenation>ul>li>a.focus{
+            color: black;
+        }
+        .pointer{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--主体-->
+        <div class="container">
+            <!--左区域-->
+                 <div class="main">
+                    <div class="title">
+                        <span class="string_Hash_Rate_Community"></span>
+                    </div>
+                     <div class="content">
+                         <ul class="articleList"></ul>
+                         <!--分页-->
+                         <div class="pagenation">
+                             <ul class="mypagenation"></ul>
+                         </div>
+                     </div>
+                 </div>
+                <!--右侧边栏-->
+                <aside>
+                    <div class="top">
+                        <span class="string_Announcements"></span>
+                    </div>
+                    <ul class="content announceList"></ul>
+                </aside>
+            </div>
+<script>
+    function loadProperties(language){
+        jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
+            name:'strings', //资源文件名称
+            language:language,
+            path:'components/i18n/resources/i18n/', //资源文件路径
+            mode:'map', //用Map的方式使用资源文件中的值
+            callback: function() {//加载成功后设置显示内容
+//               算力社区
+                $('.string_Hash_Rate_Community').html($.i18n.prop('string_Hash_Rate_Community'));
+//                公告栏
+                $('.string_Announcements').html($.i18n.prop('string_Announcements'));
+            }
+        });
+    }
+    var language = window.localStorage.language;
+    if(!language){
+        window.localStorage.language='zh-CN';
+        language='zh-CN';
+    }
+    loadProperties(language);
+    //不含时分秒
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = (date.getDate()<10 ? '0'+date.getDate():date.getDate()) + ' ';
+        //h = (date.getHours()<10 ? '0'+date.getHours():date.getHours()) + ':';
+        //m = (date.getMinutes()<10 ? '0'+date.getMinutes():date.getMinutes()) + ':';
+        //s = date.getSeconds()<10 ? '0'+date.getSeconds():date.getSeconds();
+        //return Y+M+D+h+m+s;
+        return Y+M+D;
+    }
+    function showArticle(articleList){
+        var html='';
+        var lang = window.localStorage.language;
+        var language = window.localStorage.language;
+        var No_Article=language=='zh-CN'?'暂无文章':'No Article';
+        if(articleList==null){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_Article}</div>`
+            return;
+        }
+        else if(articleList.length==0){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_Article}</div>`
+        }
+//                    文章
+        else{
+            for(var ac of articleList){
+                var date=timestampToTime(ac.date);
+                var view=lang=='zh-CN'?'查看信息':'View more/details';
+                var url=lang=='zh-CN'?ac.chineseUrl:ac.englishUrl;
+                var href='announce_details.html?articleId='+ac.articleId;
+                var link=ac.whether?url:href;
+                var langTitle=lang=='zh-CN'?ac.chineseTitle:ac.englishTitle;
+                var introduce=lang=='zh-CN'?ac.chineseIntroduce:ac.englishIntroduce;
+                var photo=lang=='zh-CN'?'chinesePhoto/'+ac.chinesePhoto:'englishPhoto/'+ac.englishPhoto;
+                var img_src=config.domain+'/resource/images/'+photo;
+                html+=`
+                 <li>
+                     <div class="left">
+                         <img src=${img_src} alt=""/>
+                     </div>
+                     <div class="right relative">
+                        <p>${langTitle}</p>
+                         <p>${introduce}</p>
+                         <p>
+                             <img src="img/announce_center/blue_right.png" alt=""/>
+                             <a href=${link} target="_blank">${view}</a>
+                             <span class="right">${date}</span>
+                         </p>
+                       </div>
+                     </li>
+                 `;
+            }
+        }
+        $(".articleList").html(html);
+    }
+    function showAnnouncement(announceList){
+        var html='';
+        var language = window.localStorage.language;
+        var No_announceList=language=='zh-CN'?'暂无公告':'No announcement';
+        if(announceList==null){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_announceList}</div>`
+            return;
+        }
+        else if(announceList.length==0){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_announceList}</div>`
+        }
+//                    公告
+        else{
+            for(var an of announceList){
+                var title=language=='zh-CN'?an.chineseTitle:an.englishTitle;
+                html+=`
+                        <li>
+                            <a href='announce_details.html?announcementId=${an.announcementId}' target="_blank">${title}</a>
+                        </li>
+                        `;
+            }
+            $(".announceList").html(html)
+        }
+//
+    }
+    function getArticle() {
+        var language=window.localStorage.language;
+        var url=config.domain+'/api/v2/user/get_all_article';
+        var page=0;
+        var data={
+            'language':language,
+            'page':page
+        };
+        $.ajax({
+            type:"GET",
+            url:url,
+            data:data,
+            dataType:"json",
+            success:function(res){
+                console.log('这是文章响应');
+                console.log(res);
+                if(res.code==200) {
+                    var articleList=res.obj.rows;
+                    var totalpage=res.obj.totalpage;
+                    showArticle(articleList);
+                    pageTpl(totalpage);
+                }
+                else{
+                    alert(res.msg);
+                }
+            },
+            error:function(){
+             alert($.i18n.prop('network_error'));
+            }
+        });
+    }
+    function getAnnouncement() {
+        var language=window.localStorage.language;
+        var url=config.domain+'/api/v2/user/get_all_announce';
+        //var page=0;
+        var data={
+            'language':language
+            //'page':page
+        };
+        $.ajax({
+            type:"GET",
+            url:url,
+            data:data,
+            dataType:"json",
+            success:function(res){
+                console.log('这是公告响应');
+                console.log(res);
+                if(res.code==200) {
+                    var announceList=res.obj.rows;
+                    showAnnouncement(announceList);
+                }
+                else{
+                    alert(res.msg);
+                }
+            },
+            error:function(){
+             alert($.i18n.prop('network_error'));
+            }
+        });
+    }
+    function pageTpl(totalpage) {
+        var language = window.localStorage.language;
+        var Previous_Page=language=='zh-CN'?'上一页':'Previous Page';
+        var Next_Page=language=='zh-CN'?'下一页':'Next Page';
+        var url=config.domain+'/api/v2/user/get_all_article';
+        var html="";
+        html+=`<li class="forbidden prev">${Previous_Page}</li> `;
+//        中间页码
+        for(var i=0;i<totalpage;i++){
+            if(i==0){
+                html+=`<li><a href="javascript:" class="focus first">1</a></li> `;
+            }else{
+                html+=`<li><a href="javascript:">${i+1}</a></li>`;
+            }
+        }
+        html+=` <li class="next pointer">${Next_Page}</li>`;
+        $(".mypagenation").html(html);
+//        分页搜索
+        var pageNo=1;
+//                   页码点击
+        $("ul.mypagenation a").each(function(i){
+            $(this).off("click").click(function(e){
+                e.preventDefault();
+                pageNo=parseInt(i+1);
+                var $tar=$(e.target);
+                var $prev=$(".prev");
+                var $next=$(".next");
+                $tar.addClass("focus");
+                $tar.parent().siblings().find(".focus").removeClass("focus");
+                i==0?$prev.addClass("forbidden").removeClass("pointer"):$prev.removeClass("forbidden").addClass("pointer");
+                i==totalpage-1?$next.addClass("forbidden").removeClass("pointer"):$next.removeClass("forbidden").addClass("pointer");
+                var page=parseInt(i);
+                var data={
+                    language:language,
+                    page:page
+                };
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    data:data,
+                    dataType:"json",
+                    success:function(res){
+                        console.log(res);
+                        if(res.code==200) {
+                            console.log('页码点击响应');
+                            var articleList=res.obj.rows;
+                            showArticle(articleList);
+                        }else{
+                            alert(res.msg);
+                        }
+                    },
+                    error:function(){
+                     alert($.i18n.prop('network_error'));
+                    }
+                });
+            });
+        });
+//      上下页点击
+//                    上页
+        $(".mypagenation .prev").off("click").click(function(){
+            var $tar=$(this);
+            pageNo--;
+            if(pageNo!=totalpage){
+                $(".next").removeClass("forbidden").addClass('pointer');
+            }
+            $tar.parent().children(":eq("+(pageNo)+")").find("a").addClass("focus");
+            $tar.parent().children(":eq("+(pageNo)+")").find("a").parent().siblings().find(".focus").removeClass("focus");
+            if(pageNo<1){
+                pageNo=1;
+                $tar.addClass("forbidden").removeClass("pointer");
+                return;
+            }
+            var page=parseInt(pageNo-1);
+            //            默认全部
+
+            var  data = {
+                'language': language,
+                'page': page
+            };
+            if(pageNo<=1){
+                pageNo=1;
+                $tar.addClass("forbidden").removeClass("pointer");
+                sessionStorage.setItem('page',page);
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    data:data,
+                    dataType:"json",
+                    success:function(res){
+                        console.log(res);
+                        if(res.code==200) {
+                            var articleList=res.obj.rows;
+                            showArticle(articleList);
+                        }else{
+                            alert(res.msg);
+                        }
+                    },
+                    error:function(){
+                     alert($.i18n.prop('network_error'));
+                    }
+                });
+                return;
+            }
+            $tar.removeClass("forbidden");
+            sessionStorage.setItem('page',page);
+            $.ajax({
+                type:"GET",
+                url:url,
+                data:data,
+                dataType:"json",
+                success:function(res){
+                    console.log(res);
+                    if(res.code==200) {
+                        console.log('页码点击响应');
+                        var articleList=res.obj.rows;
+                        showArticle(articleList);
+                    }
+                    else{
+                        alert(res.msg);
+                    }
+                },
+                error:function(){
+                 alert($.i18n.prop('network_error'));
+                }
+            });
+        });
+//                    下页
+        $(".mypagenation .next").off("click").click(function(){
+            var $tar=$(this);
+            pageNo++;
+            if(pageNo!=1){
+                $(".prev").removeClass("forbidden").addClass('pointer');
+            }
+            $tar.parent().children(":eq("+(pageNo)+")").find("a").addClass("focus");
+            $tar.parent().children(":eq("+(pageNo)+")").find("a").parent().siblings().find(".focus").removeClass("focus");
+            if(pageNo>totalpage){
+                pageNo=totalpage;
+                $tar.addClass("forbidden").removeClass("pointer");
+                return;
+            }
+            $tar.removeClass("forbidden");
+            var page=parseInt(pageNo-1);
+    //            默认全部
+            var   data = {
+                'language': language,
+                'page': page
+            };
+            if(pageNo>=totalpage){
+                pageNo=totalpage;
+                $tar.addClass("forbidden").removeClass("pointer");
+                sessionStorage.setItem('page',page);
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    data:data,
+                    dataType:"json",
+                    success:function(res){
+                        console.log(res);
+                        if(res.code==200) {
+                            console.log("分页下一页点击搜索");
+                            console.log('页码点击响应');
+                            var articleList=res.obj.rows;
+                            showArticle(articleList);
+                        }else{
+                            alert(res.msg);
+                        }
+                    },
+                    error:function(){
+                     alert($.i18n.prop('network_error'));
+
+                    }
+                });
+                return;
+            }
+            sessionStorage.setItem('page',page);
+            $.ajax({
+                type:"GET",
+                url:url,
+                data:data,
+                dataType:"json",
+                success:function(res){
+                    console.log(res);
+                    if(res.code==200) {
+                        var articleList=res.obj.rows;
+                        showArticle(articleList);
+                    }
+                    else{
+                        alert(res.msg);
+                    }
+                },
+                error:function(){
+                 alert($.i18n.prop('network_error'));
+                }
+            });
+        });
+    }
+    $(function(){
+        getArticle();
+        getAnnouncement();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="css/base.css"/>-->
+</head>
+<style>
+    /*充值记录*/
+    /*主要内容content*/
+    .main{
+        width:1108px;
+        margin: 0 auto;
+        float: right;
+        min-height: 50px ;
+        /*overflow: hidden;*/
+    }
+    .top{
+        width: 100%;
+        height: 62px;
+    }
+    .title_left{
+        width: 1068px;
+        margin-left:20px;
+        height:62px;
+        line-height:62px;
+        text-align: left;
+    }
+    .top> .title_left{
+        border-bottom: 1px solid #ebeff0;
+    }
+    .title_left>span{
+        display: inline-block;
+        font-size: 16px;
+        color: #1D1C1C;
+    }
+    .title_left>span:first-child{
+        font-size: 16px;
+        color: #1D1C1C;
+    }
+    .banner{
+        width: 1038px;
+        margin-left: 35px;
+        margin-top: 20px;
+        margin-right: 35px;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .banner_info{
+        width: 100%;
+        height: 152px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .logo_banner{
+        width: 152px;
+        height: 152px;
+        line-height: 152px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .logo_banner>img{
+        width: 68px;
+        height: 82px;
+        vertical-align: middle;
+    }
+    .logo_banner>p{
+        font-size: 16px;
+        color: #fff;
+    }
+    .ad_banner{
+        margin-left: 24px;
+        height: 152px;
+        line-height: 152px;
+        vertical-align: middle;
+    }
+    .ad_banner>div:first-child{
+        margin-top: 43px;
+    }
+    .ad_banner>div:first-child>p{
+        text-align: left;
+    }
+    .ad_banner>div:first-child>p:first-child{
+        margin-bottom: 20px;
+    }
+    .ad_banner>div:first-child>p>span{
+        display: inline-block;
+        font-size: 16px;
+        color: #fff;
+    }
+    .ad_banner>div:first-child>p:last-child>span{
+        margin-right: 24px;
+    }
+    .ad_banner>div:first-child>p:first-child{
+        /*margin-bottom: 20px;*/
+    }
+    .charge_cal>div.title_left{
+        height: 62px;
+        line-height: 62px;
+    }
+    .charge_cal>.title_left>span{
+        margin-left: 15px;
+        height: 62px;
+        line-height: 62px;
+    }
+    .cal_change{
+        width: 1038px;
+        height: 161px;
+        margin: 0 auto;
+        line-height: 161px;
+    }
+    .cal_change>div:first-child{
+        width: 204px;
+        height: 42px;
+    }
+    .cal_change{
+        width: 1038px;
+        height: 161px;
+        line-height: 161px;
+        text-align: center;
+        border: 1px solid #ebeff0;
+    }
+    .cal_change>ul{
+        margin: 58px auto;
+        height: 42px;
+    }
+    .cal_change>ul>li{
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        height: 42px;
+        line-height: 42px;
+    }
+    li.CNY_box>span:last-child,li.USD_box>span:last-child,li.BHPC_box>span:last-child{
+        display: inline-block;
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        font-size: 16px;
+        color: #1D1C1D;
+    }
+    li.cal_change_icon{
+        display: inline-block;
+        width: 24px;
+        height: 18px;
+        vertical-align: middle;
+        background: url("img/officialCharge/zhuanhuan.png")no-repeat center;
+        margin: 0 20px;
+    }
+    .charge_notice{
+        width: 1038px;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .charge_notice>span{
+        display: inline-block;
+        margin-left: 15px;
+        margin-top: 32px;
+        margin-bottom: 20px;
+        color: #58c9ff;
+    }
+    .charge_notice>div>p{
+        height: 36px;
+        line-height: 36px;
+        font-size: 13px;
+        margin-left: 45px;
+        color: #5a5a5a;
+    }
+    .charge_notice>div>p:last-child{
+        margin-bottom: 250px;
+    }
+</style>
+<body>
+<!--充提记录-->
+<div class="main">
+    <div class="top">
+        <div class="title_left left">
+            <span>BHPC 官方代充</span>
+        </div>
+    </div>
+    <div class="banner relative">
+        <img src="img/officialCharge/daichong_ban.png" alt=""/>
+        <div class="banner_info relative">
+            <div class="logo_banner left">
+                <img src="img/officialCharge/BHPC_logo.png" alt=""/>
+            </div>
+            <div class="ad_banner left">
+                <div>
+                    <p>
+                        <span>今日汇率：</span>
+                        <span class="todayRate"></span>
+                    </p>
+                    <!--<ul>-->
+                        <!--<li>BHPC 官方充值代理—dooble</li>-->
+                        <!--<li>WeChat:609702060</li>-->
+                        <!--<li>服务时间:7x24h</li>-->
+                    <!--</ul>-->
+                    <p>
+                        <span class="contant"></span>
+                        <span class="wechat"></span>
+                        <span>服务时间:7x24h</span>
+                    </p>
+                </div>
+                    <!--<p>-->
+                        <!--BHPC 官方充值代理—dooble&nbsp;&nbsp;&nbsp;&nbsp;WeChat&nbsp;:&nbsp;609702060&nbsp;&nbsp;&nbsp;&nbsp;服务时间&nbsp;:&nbsp;7x24-->
+                    <!--</p>-->
+            </div>
+        </div>
+    </div>
+    <div class="charge_cal">
+        <div class="title_left">
+            <span>充值计算</span>
+        </div>
+        <div class="cal_change">
+            <ul>
+                <li class="CNY_box">
+                    <input type="text" placeholder="请输入输出数额" class="CNY"data-type="1"/>
+                    <span>CNY</span>
+                </li>
+                <li  class="cal_change_icon"></li>
+                <li class="USD_box">
+                    <input type="text" placeholder="请输入输出数额" class="USD" data-type="2"/>
+                    <span>USD</span>
+                </li>
+                <li  class="cal_change_icon"></li>
+                <li class="BHPC_box">
+                    <input type="text" placeholder="请输入输出数额"class="BHPC" data-type="3"/>
+                    <span>BHPC</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="charge_notice">
+        <span>充值须知</span>
+        <div>
+            <p>1.代理兑换是由BHP合作方提供，并由合作方指派代理商户与用户进行人民币或其他币种与BHPC一对一的自愿兑换。</p>
+            <p>2.代理商户均为实名认证商户，且经过合作方严格审核。其他用户同样需要通过实名认证。</p>
+            <p>3.兑换比例按照代理商根据交易所行情价给出当日兑换报价</p>
+            <p>4.目前BHPC仅支持人名币与美金的代理兑换。</p>
+            <p>5.BHPC兑换到账时间为:</p>
+            <p>&nbsp;&nbsp;&nbsp;09:30～18:30&nbsp;&nbsp;到账30～60分钟</p>
+            <p>&nbsp;&nbsp;&nbsp;18:30之后，&nbsp;&nbsp;次日到账</p>
+            <p>6.BHPC官方代理兑换为您7*24小时不间断服务</p>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+        //请求is_login 判断是否正常登陆
+        $.ajax({
+            type:"POST",
+            url:config.domain+"/api/v2/user/is_login",
+            data:{
+                token:token,
+                language:language
+            },
+            dataType:"json",
+            success:function(res){
+                console.log("这是is_login个人信息响应");
+                if(res.code==200) {
+                    //        GET /api/v2/user/substitute_ratio
+                    $.ajax({
+                        type:"GET",
+                        url:config.domain+'/api/v2/user/substitute_ratio',
+                        data:{
+                            language:language,
+                            token:token
+                        },
+                        dataType:"json",
+                        success:function(res){
+                            console.log("这是官方代充页面");
+                            console.log(res);
+                            if(res.code==200) {
+                                var bhpcToCnyRate = res.obj.bhpcToCnyRate;
+                                var bhpcToDollar = res.obj.bhpcToDollar;
+                                var contant = res.obj.contant;
+                                var wechat = res.obj.wechat;
+                                $(".todayRate").html(`1BHPC≈${bhpcToCnyRate}CNY≈${bhpcToDollar}USD`);
+                                $(".contant").html(`BHPC 官方充值代理—${contant}`);
+                                $(".wechat").html(`WeChat:${wechat}`);
+                            }
+                            else{
+                                alert(res.msg);
+                            }
+                        },
+                        error:function(){
+                            alert($.i18n.prop('network_error'));
+                            window.location.reload();
+
+                        }
+                    });
+                    //        POST /api/v2/user/official_substitute
+                    $(".cal_change>ul>li>input").on("input",function(){
+                        var $tar=$(this);
+                        var n=1.00;
+                        var sum=n*($tar.val());
+                        if(isNaN(sum)){
+                            alert($.i18n.prop('alert_input_number'));
+                            $tar.val("");
+                            return;
+                        }
+                        var type=$tar.data("type");
+                        $.ajax({
+                            type:"POST",
+                            url:config.domain+"/api/v2/user/official_substitute",
+                            data:{
+                                token:token,
+                                type:type,
+                                sum:sum,
+                                language:language
+                            },
+                            dataType:"json",
+                            success:function(res){
+                                console.log("计算");
+                                console.log(res);
+                                if(res.code==200){
+                                    var obj=res.obj;
+                                    for(var key in obj){
+                                        switch(key){
+                                            case "CNY":$(".CNY").val(obj[key]);break;
+                                            case "USD":$(".USD").val(obj[key]);break;
+                                            case "BHPC":$(".BHPC").val(obj[key]);break;
+                                            default :break;
+                                        }
+                                    }
+                                }else{
+                                    alert(res.msg);
+                                }
+                            },
+                            error:function(){
+                                alert($.i18n.prop('network_error'));
+                                window.location.reload();
+
+                            }
+                        });
+                    });
+//        blur 清空input
+                    $(".cal_change").find("input").blur(function(){
+                        $(this).parent().parent().find("input").val("");
+                    });
+
+                }
+                else{
+                    alert(res.msg)
+                    window.localStorage.language=language;
+                    //window.location="login.html";
+                    window.location=config.myWeb+'/login.html';
+                }
+            },
+            error:function(){
+                alert($.i18n.prop('network_error'));
+                window.location.reload();
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

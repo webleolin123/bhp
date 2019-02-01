@@ -1,0 +1,488 @@
+/********************************base css******************************/
+body{
+    background: #fff!important;
+    font-family: Helvetica, Arial, sans-serif,"Montserrat", "Helvetica Neue"!important;
+}
+ul,ol{
+    list-style: none;
+}
+ul,ol,li,p{
+    padding: 0;
+    margin: 0;
+}
+　.clearfix:before,.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.hide{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+input{
+    outline: none;
+}
+input:focus{
+    border: 1px solid #2ec3ee!important;
+    color:red;
+}
+.blurBorder{
+    border:1px solid #2ec3ee!important;
+}
+.relative{
+    position: relative;
+}
+/********************************common css******************************/
+.login_container{
+    width:1080px;
+    margin: 0 auto;
+}
+.login_log{
+    height: 47px;
+    margin: 47px auto;
+    text-align: left;
+}
+.login_log>img{
+    width: 152px;
+    height: 47px;
+}
+.login_main{
+    border: 1px solid #dae5e8;
+    width: 100%;
+    min-height: 670px;
+}
+.login_item>div{
+    display: inline-block;
+}
+.login_item>div>a{
+    display:inline-block;
+    width: 539px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    color: #1D1C1D;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+.login_item>div>a.toLogin{
+    border-right: 1px solid #dae5e8;
+}
+/****************************************************点击切换*/
+.unActive{
+    border-bottom:1px solid #dae5e8;
+    color: #7da3ad;
+    background: #fafbfc;
+}
+/*//////////////////页脚/////////////////////////////////////////////*/
+div.login_footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+/*////////////////语言切换//////////////////////*/
+div.header_lang{
+    height: 36px;
+    line-height: 36px;
+    float: right;
+    z-index: 10000;
+    cursor: pointer;
+}
+div.header_lang>span{
+    display: inline-block;
+    height: 36px;
+    font-size: 12px;
+    color: #000;
+}
+div.header_lang>span:nth-child(2){
+    height: 36px;
+}
+div.header_lang>span:last-child{
+    width: 8px;
+    height: 5px;
+    vertical-align: middle;
+    background: url("../img/black_down.png")no-repeat center;
+}
+span.flag_icon{
+    margin-right: 10px;
+    display: inline-block;
+    width:26px;
+    /*background: url("../img/guoqibg.png")no-repeat 0 8px;*/
+}
+.header_lang>div:first-child{
+    height: 36px;
+    line-height: 36px;
+}
+.lang,.toggle_icon{
+    position: relative;
+    top: -13px;
+}
+.toggle_icon{
+    right: 5px;
+}
+.lang{
+    right: 10px;
+}
+ul.lang_choose{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 60px;
+    background: #2ec3ee;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ebeff0 ;
+    box-shadow:0 0 10px #ebeff0;
+    display: none;
+}
+ul.lang_choose>li{
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    text-align: center;
+}
+/********************************my_login css******************************/
+.user_login{
+    width: 442px;
+    margin: 0 auto;
+    text-align: center;
+}
+.user_login>p{
+    /*margin-top: 64px;*/
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 24px;
+    color: #7f8996;
+}
+.user_login>div>label{
+    font-size: 14px;
+    color: #1D1C1D;
+    margin-right: 16px;
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    /*width: 100px;*/
+    text-align: right;
+}
+.user_login>div>input{
+    width: 264px;
+    height: 42px;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    color: black;
+    font-size: 14px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+::-webkit-input-placeholder{
+    color: #dadada;
+}
+.user_login>div{
+    margin-bottom: 20px;
+}
+.user_login>div:nth-child(2){
+    margin-top: 30px;
+}
+.user_login>div:nth-child(4){
+    text-align: right;
+    /*width: 385px;*/
+    margin: 20px auto;
+}
+.user_login>div:nth-child(4)>a{
+    display: inline-block;
+    font-size: 14px;
+    color: #2ec3ee;
+}
+.user_login>div:last-child{
+    /*width: 413px;*/
+    text-align: right;
+}
+.user_login>div:last-child>input{
+    width: 265px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    border:none;
+    border-radius: 4px;
+    background: #2ec3ee;
+    color: #feffff;
+}
+div.login_footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+/********************************my_register css******************************/
+.user_register{
+    width: 442px;
+    margin: 0 auto;
+    text-align: center;
+}
+.user_register>p{
+    /*margin-top: 64px;*/
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 24px;
+    color: #7f8996;
+}
+.user_register>div>label{
+    text-align: right;
+    /*width: 100px;*/
+    font-size: 14px;
+    color: #1D1C1D;
+    margin-right: 16px;
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+}
+.user_register>div>input,.user_register>div:nth-child(6)>div>input{
+    width: 264px;
+    height: 42px;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    color: black;
+    font-size: 14px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+::-webkit-input-placeholder{
+    color: #dadada;
+}
+.user_register>div{
+    margin-bottom: 20px;
+}
+.user_register>div:nth-child(2){
+    margin-top: 30px;
+}
+.user_register>div:nth-child(4){
+    text-align: center;
+    /*width: 300px;*/
+    margin: 20px auto;
+}
+.user_register>div:nth-child(4)>a{
+    display: inline-block;
+    font-size: 14px;
+    color: #ff8488;
+    min-width: 600px;
+}
+.user_register>div:last-child{
+    /*width: 414px;*/
+    text-align: right;
+    margin-bottom: 64px;
+}
+.user_register>div:last-child>input{
+    width: 265px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    border:none;
+    border-radius: 4px;
+    background: #2ec3ee;
+    color: #feffff;
+}
+.user_register>div:last-child>a{
+    color: #2ec3ee;
+    font-size: 14px;
+}
+
+/*//////////////////////////////////////////////////////////////*/
+.user_register>div>input.choose{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #B1B1B1;
+    vertical-align: middle;
+    /* opacity: 0.5; */
+    background: #fff;
+    border-radius: 2px;
+    border: none!important;
+    margin: 0 5px;
+}
+.user_register>div:nth-child(6)>div{
+    display: inline-block!important;
+    width: 264px!important;;
+}
+.user_register>div:nth-child(6)>div>input{
+    width: 150px;
+}
+.user_register>div:nth-child(6)>div>a{
+    display: inline-block;
+    width: 110px;
+    color: #2ec3ee;
+    font-size: 14px;
+    text-decoration: underline;
+    outline: none;
+}
+.user_register>div:nth-child(6)>div>img{
+    display: inline-block;
+    width: 110px;
+    height: 42px;
+    box-sizing: border-box;
+}
+.user_register>div:nth-child(7)>span>a{
+    color: #2ec3ee;
+    outline: none;
+}
+.user_register>div:nth-child(8){
+    height: 16px;
+    line-height: 16px;
+}
+.user_register>div:nth-child(8)>span>a{
+    color: #2ec3ee;
+    font-size: 14px;
+    outline: none;
+    text-decoration: none;
+}
+div.login_footer{
+    margin-bottom:64px;
+}
+
+/*//////////////old_login css////////////////////*/
+.loading{
+    width:215px;
+    height:43px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 50px auto;
+    line-height:45px;
+    color:#fff;
+    padding-left:60px;
+    font-size:15px;
+    background: #000 url(../images/loading.gif) no-repeat 10px 50%;
+    opacity: 0.7;
+    z-index:9999;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    display: none;
+}
+/*****************************忘记密码*****************************/
+ .forgetPassword_body{
+     border: 1px solid #dae5e8;
+     width:400px;
+     min-height: 330px;
+     position: absolute;
+     top: 10%;
+     /*bottom: 0;*/
+     left: 0;
+     right: 0;
+     margin: 219px auto;
+     z-index: 1000;
+     background: #FFFFFF;
+     -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+     border-radius: 4px;
+ }
+.forgetPassword_body>div{
+    margin: 0 15px;
+    width: 370px;
+}
+.forgetPassword_body>div:nth-child(2){
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+.forgetPassword_body>div:nth-child(3){
+    font-size: 16px;
+    text-align: center;
+    color: rgb(173,173,173);
+    margin-top: 20px;
+}
+.forgetPassword_body>div:nth-child(4){
+    margin: 20px auto;
+}
+.forgetPassword_body>div:nth-child(4)>input,.forgetPassword_body>div:nth-child(5)>input{
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 20px;
+    border: 1px solid #eaeaea;
+    font-size: 14px;
+    color: black;!important;
+}
+.forgetPassword_body>div:nth-child(4)>input{
+    width: 370px;
+}
+.forgetPassword_body>div:nth-child(5){
+    height: 45px;
+    line-height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.forgetPassword_body>div:nth-child(5)>label{
+    width: 70px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+}
+.forgetPassword_body>div:nth-child(5)>img{
+    vertical-align: middle;
+    margin-left: 10px;
+    height: 40px;width: 100px;
+}
+.forgetPassword_body>div:nth-child(5)>input{
+    display:inline-block;
+    width: 150px;
+}
+.forgetPassword_body>div:nth-child(5)>a{
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    text-decoration: underline;
+    color: #2ec3ee;
+    display: inline-block;
+    width: 90px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.forgetPassword_body>button{
+    width: 370px;
+    border-radius: 0;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #2ec3ee;
+    border: none;
+    outline: none;
+    margin: 30px 15px;
+}
+/*提示信息位置样式*/
+#login_message,#regist-message,#forget-msg,#message{
+    width: 333px;
+    margin:6px auto;
+    text-align: center;
+}
+.tips_container{
+    height: 64px;
+    padding-left: 20px;
+}
+.alert{
+    margin-bottom: 0;
+    min-height: 54px;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ::-webkit-input-placeholder{
+            text-align: center;
+        }
+    </style>
+</head>
+<style>
+
+</style>
+<body>
+<!--ERC-20-->
+<div class="main">
+    <div class="top">
+        <div class="title_left left">
+            <span class="string-ERC20"></span>
+        </div>
+    </div>
+    <div class="ERC-20_notice">
+        <div>
+            <p></p><p></p><p></p>
+            <input type="text" class="ETH_addr string-ERC20_addr myborder"/>
+        </div>
+        <div>
+            <input type="submit" class="save_btn pointer string_save"/>
+        </div>
+    </div>
+</div>
+<script>
+    function loadProperties(language){
+        jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
+            name:'strings', //资源文件名称
+            language:language,
+            path:'components/i18n/resources/i18n/', //资源文件路径
+            mode:'map', //用Map的方式使用资源文件中的值
+            callback: function() {//加载成功后设置显示内容
+//                设置 ERC-20钱包地址
+                $('.string-ERC20').html($.i18n.prop('string-ERC20'));
+//                ERC20_钱包地址 placeholder
+                $('.string-ERC20_addr').attr('placeholder',$.i18n.prop('string-ERC20_addr'));
+//               保存
+                $('.string_save').attr('value',$.i18n.prop('string_save'));
+                //钱包说明
+                var string_ERC20_tips=['string_ERC20_tips_1','string_ERC20_tips_2','string_ERC20_tips_3'];
+                each_menu('.ERC-20_notice>div>p',string_ERC20_tips);
+            }
+        });
+    }
+    var language = window.localStorage.language;
+    if(!language){
+        window.localStorage.language='zh-CN';
+        language='zh-CN';
+    }
+    loadProperties(language);
+    $(function(){
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+        //请求is_login 判断是否正常登陆
+        $.ajax({
+            type:"POST",
+            url:config.domain+"/api/v2/user/is_login",
+            data:{
+                token:token,
+                language:language
+            },
+            dataType:"json",
+            success:function(res){
+                console.log("这是is_login个人信息响应");
+                if(res.code==200) {
+                    click_borderColor('.myborder','blurBorder');
+                }
+                else{
+                    alert(res.msg)
+                }
+            },
+            error:function(){
+               alert($.i18n.prop('network_error'));
+            }
+        });
+    });
+</script>
+</body>
+</html>

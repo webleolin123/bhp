@@ -1,0 +1,262 @@
+/*查看地址下划线*/
+.view_recentlyAddr:hover,.view_historyAddr:hover{
+    text-decoration: underline!important;
+}
+/*进度条*/
+.progress{
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+    text-align: center;
+}
+.progress>a {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    border: 1px solid #a5a5a5;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fafafa;
+    z-index: 100;
+}
+.progress>i{
+    display: inline-block;
+    position: absolute;
+    font-size: 12px;
+    top: 27px;
+    color: #a5a5a5;
+    z-index: 100;
+}
+.c0{
+    right: 85%;
+}
+.c1{
+    right: 80%;
+}
+.c2{
+    right: 51%;
+}
+.c3{
+    right: 34%;
+}
+.c4{
+    right: 17%;
+}
+.i0{
+    right: 98%;
+}
+.i1{
+    right: 88%;
+}
+.i2{
+    right: 54%;
+}
+.i3{
+    right: 32%;
+}
+.i4{
+    right: 13%;
+}
+.p1{
+    width:296px;
+    height: 3px;
+    margin-bottom: 8px;
+}
+progress::-webkit-progress-value  { background: #2ec3ee; }
+.shining{
+    width: 14px;
+    height: 14px;
+    color:#2ec3ee;
+    box-shadow: 0 0 5px #2ec3ee;
+    border: 1px solid #2ec3ee!important;
+}
+
+/*新增地址及获取验证码*/
+.add_addr{
+    width: 1038px;
+    height: 280px;
+    display: none;
+}
+.add_addr>form{
+    margin-left: 38px;
+    text-align: center;
+}
+.add_addr>form>div:nth-child(1),.add_addr>form>div:nth-child(2), .add_addr>form>div:nth-child(3){
+    height: 42px;
+    line-height: 42px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.add_addr>form>div:nth-child(1)>span:first-child,.add_addr>form>div:nth-child(2)>span:first-child, .add_addr>form>div:nth-child(3)>span:first-child{
+    font-size: 14px;
+    color: #1D1C1C;
+}
+.add_addr>form>div:nth-child(1)>span:first-child>input
+.add_addr>form>div:nth-child(2)>span:first-child>input,
+.add_addr>form>div:nth-child(3)>span:first-child>input,
+.add_addr>form>input[type='button']{
+    border-radius: 4px;
+    cursor: pointer;
+}
+.add_addr>form>div:nth-child(1)>span:first-child>label,
+.add_addr>form>div:nth-child(2)>span:first-child>label,
+.add_addr>form>div:nth-child(3)>span:first-child>label{
+    display: inline-block;
+    width: 170px;
+    height: 42px;
+    line-height: 42px;
+    text-align: right;
+    /*font-size: 14px;*/
+    /*color: #1D1C1C;*/
+}
+.add_addr>form>div:nth-child(1)>span:first-child>input,
+.add_addr>form>div:nth-child(2)>span:first-child>input,
+.add_addr>form>div:nth-child(3)>span:first-child>input{
+    display: inline-block;
+    font-size: 14px;
+    color: #DADADA;
+    border: 1px solid #DADADA;
+    padding-left: 10px;
+    opacity: 0.5;
+    width: 582px;
+    height: 42px;
+    line-height: 42px;
+}
+.add_addr>form>div:nth-child(3)>span:first-child>input{
+    width: 444px;
+    margin-right: 10px;
+}
+.add_addr>form>input[type='button']{
+    width: 82px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ebeff0 ;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.comfirm_btn{
+    color: #ffffff!important;
+    background: #2ec3ee!important;
+    margin-right: 42px;
+}
+.cancel_btn{
+    color: #1D1C1C;
+    background: #fafafa;
+}
+.toAdd_addr{
+    cursor: pointer;
+}
+.getValiCode{
+    display:inline-block;
+    width: 124px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #2ec3ee;
+    background: #ffffff;
+    border: 1px solid #2ec3ee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.getValiCode:hover{
+    text-decoration: none;
+}
+input[ name="valiCode"]{
+    cursor: auto!important;
+}
+.validID{
+    background-color: #ebeff0!important;
+    color: #fff!important;
+}
+
+/*验证码提示*/
+.getValiCode,.sendTips{
+    display:inline-block;
+    width: 124px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #2ec3ee;
+    background: #ffffff;
+    border: 1px solid #2ec3ee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.sendTips{
+    width: 65px;
+    color:red;
+    display: none;
+    border:none;
+    position: absolute;
+    top: -14px;
+    right: -75px;
+}
+/*官方代充 充值计算*/
+li.CNY_box>input,li.USD_box>input,li.BHPC_box>input{
+    width: 204px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #DADADA;
+    border: 1px solid #ebeff0;
+    border-radius: 4px;
+}
+::-webkit-input-placeholder{
+    color: #B1B1B1;
+    text-align: left;
+}
+input:focus::-webkit-input-placeholder{
+    text-indent: -999em;
+    z-index: -20;
+}
+.confirm{
+    color: #ffffff!important;
+}
+.noClick{
+    border: none!important;
+    background-color: #dADADA!important;
+    color: #fff!important;
+}
+/*/页脚修改/*/
+.myFooterText{
+    text-align: center!important;
+    position: relative;
+}
+.myFooterText>p{
+    text-align: center!important;
+    width: 75%;
+    display: inline-block;
+}
+.footer_scanCode{
+    width: 133px;
+    height: 133px;
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    background: url('../img/footer/footer_scan_code.png')no-repeat center;
+}
+/*解决底部固定遮挡*/
+
+.iframe1{
+    min-height: 700px;
+    /*margin-bottom: 150px;*/
+}
+/*输入框有焦点或有值样式*/
+.blurBorder{
+    border:1px solid #2ec3ee!important;
+}
+/*输入框样式*/
+input:focus{
+    border:1px solid #2ec3ee!important;
+    outline: none;
+}

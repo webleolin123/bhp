@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        nav{
+            margin-bottom: 0;
+        }
+    　　.clearfix:before,.clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+        .clearfix {
+            zoom: 1;
+        }
+        .banner_carousel, .item, .carousel-inner,.carousel{
+            width: 1920px;
+            height: 564px;
+            margin-top: 0;
+        }
+        .event_container{
+            width: 1320px;
+            min-height: 100px;
+            margin-bottom: 100px;
+        }
+        .event_container:before{
+            content: '';
+            display: table;
+        }
+        .event_item>div{
+            width: 50%;
+            height: 54px;
+            margin-top: 38px;
+        }
+        .event_item>div>a{
+            display: inline-block;
+            width: 100%;
+            height: 54px;
+            line-height: 54px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            background: #f2f2f2;
+            color: #1D1C1C;
+            border: 1px solid #ebeff0;
+            box-shadow: 0 0 5px #ebeff0;
+        }
+        .event_item>div>a:focus{
+            color: #2ec3ee;
+            background: #fff;
+        }
+        .event_content{
+            width: 1320px;
+            min-height: 50px;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+        }
+        .event_content>div{
+            width: 640px;
+            height: 504px;
+            text-align: left;
+            margin-top: 38px;
+        }
+        .event_content>div>img{
+            width: 640px;
+            height: 344px;
+        }
+        .event_content>div>p{
+            margin-left:25px;
+        }
+        .event_content>div>p:nth-child(2){
+            margin-top: 32px;
+            color: #1D1C1C;
+        }
+        .event_content>div>p:nth-child(3),.event_content>div>p:nth-child(4){
+            font-size: 14px;
+            color: #aaaaaa;
+        }
+        .event_content>div>p:nth-child(3){
+            margin-top: 20px;
+            margin-bottom: 32px;
+        }
+        .event_content>div>p:nth-child(4){
+            height: 30px;
+            line-height: 30px;
+        }
+        .active{
+            background: #fff!important;
+        }
+        .activity_main{
+            padding-bottom: 1px;
+            width: 100%;
+            background: #fff;
+            min-height: 840px;
+        }
+        footer{
+            margin-top: 0!important;
+        }
+    </style>
+</head>
+<body>
+<div class="activity_main"></div>
+<script src="js/tools/bootstrap.min.js"></script>
+<script src="js/config.js"></script>
+<script>
+    function loadProperties(language){
+        jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
+            name:'strings', //资源文件名称
+            language:language,
+            path:'components/i18n/resources/i18n/', //资源文件路径
+            mode:'map', //用Map的方式使用资源文件中的值
+            callback: function() {//加载成功后设置显示内容
+//               进行中活动
+                $('.string_Live_activities').html($.i18n.prop('string_Live_activities'));
+//                已结束活动
+                $('.string_Past_activities').html($.i18n.prop('string_Past_activities'));
+//              无活动时提示
+//                $('.activity_error_tips').html($.i18n.prop('activity_error_tips'));
+            }
+        });
+    }
+    //不含时分秒
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = (date.getDate()<10 ? '0'+date.getDate():date.getDate()) + ' ';
+        //h = (date.getHours()<10 ? '0'+date.getHours():date.getHours()) + ':';
+        //m = (date.getMinutes()<10 ? '0'+date.getMinutes():date.getMinutes()) + ':';
+        //s = date.getSeconds()<10 ? '0'+date.getSeconds():date.getSeconds();
+        //return Y+M+D+h+m+s;
+        return Y+M+D;
+    }
+    function isLogin() {
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+        $.ajax({
+            type:"POST",
+            url:config.domain+"/api/v2/user/is_login",
+            data:{
+                token:token,
+                language:language
+            },
+            dataType:"json",
+            async: false,
+            success:function(res){
+                if(res.code==200) {
+
+                }
+                else{
+                    alert(res.msg);
+                    window.localStorage.language=language;
+                    //window.location="login.html";
+                    window.location=config.myWeb+'/login.html';
+                }
+            },
+            error:function(){
+             alert($.i18n.prop('network_error'));
+            }
+        });
+    }
+    function newA(){
+        var newActivityList=JSON.parse(localStorage.getItem('newActivityList'));
+        var lang=localStorage.getItem('language');
+        var arr_banner=[];
+        var html='';
+        var language = window.localStorage.language;
+        var  No_activity=language=='zh-CN'?'暂无活动':'No promotion now';
+        if(newActivityList.length==0){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center " data-activityId='xyz'>${No_activity}</div>`;
+        }else{
+            for(var newA of newActivityList){
+                var photo=lang=='zh-CN'?'chinesePhoto/'+newA.chinesePhoto:'englishPhoto/'+newA.englishPhoto;
+                var name=lang=='zh-CN'?newA.chineseName:newA.englishName;
+                var detail=lang=='zh-CN'?newA.chineseIntroduce:newA.englishIntroduce;
+                var starTime=timestampToTime(newA.startDateTime);
+                var endTime=timestampToTime(newA.endDateTime);
+                var photo_big=lang=='zh-CN'?'chineseBigPhoto/'+newA.chineseBigPhoto:'englishBigPhoto/'+newA.englishBigPhoto;
+                var banner_imgs=config.domain+'/resource/images/'+photo_big;
+                arr_banner.push(banner_imgs);
+                localStorage.setItem('arr_banner',JSON.stringify(arr_banner));
+//                arr_banner=[];
+//                console.log(arr);
+                var img_src=config.domain+'/resource/images/'+photo;
+                html+=`
+                                            <div data-activityId=${newA.activityId}>
+                                                <img src=${img_src} alt=""/>
+                                                <p>${name}</p>
+                                                <p>${detail}</p>
+                                                <p><img src="" alt=""class="time_icon"/>${starTime} 起</p>
+                                                <span class="going_icon"></span>
+                                           </div>
+                                        `;
+            }
+        }
+        $(".event_content").html(html);
+        $(".event_content>div").each(function(i){
+            var $tar=$(this);
+            var activityId=$tar.attr("data-activityId");
+            if(activityId=='xyz'){
+                return;
+            }
+//            var myWeb='https://www.bhpcash.io/bhp/Activity_details.html?activityId='+activityId;
+            $tar.click(function(){
+                var myWeb=config.myWeb+'/Activity_details.html?activityId='+activityId;
+                window.open(myWeb);
+           });
+        });
+    }
+    function banner_carousel(){
+        var html='';
+        var html_indicators='';
+        var language = window.localStorage.language;
+        var  No_activity=language=='zh-CN'?'暂无活动':'No promotion now';
+//        var  contact =language=='zh-CN'?'数据不完整,联系客服':'Incomplete data, contact customer service';
+        var arr_banner=JSON.parse(localStorage.getItem('arr_banner'));
+        console.log(arr_banner);
+        if(arr_banner==null){
+//            alert("未提供轮播大图 显示缺省页面");
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_activity}</div>`;
+            $('.carousel-inner').html(html);
+            return;
+        }
+//        if(arr_banner.length<3&&arr_banner.length>0){
+//            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${contact}</div>`;
+//            $('.carousel-inner').html(html);
+//            return;
+//        }
+//        arr_banner=arr_banner.slice(0,3);
+        html='';
+        if(arr_banner.length==0){
+//            缺省页面
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center ">${No_activity}</div>`;
+        }
+        else{
+            if(arr_banner.length>3){
+                arr_banner.length=3;
+            }
+            for(var i=0;i<arr_banner.length;i++){
+                if(i==0){
+                    html_indicators+=`
+                    <li data-slide-to=${i} data-target="#ad9" class="active"></li>
+                `;
+                    html+=`
+                        <div class="item active">
+                        <img src=${arr_banner[i]}>
+                </div>
+                    `
+                }
+                else{
+                    html_indicators+=`
+                    <li data-slide-to=${i} data-target="#ad9"></li>
+                `;
+                    html+=`
+                 <div class="item">
+                        <img src=${arr_banner[i]}>
+                </div>
+                `;
+                }
+            }
+//            $(".carousel-inner>.item>img").each(function(i){
+//               $(this).attr('src',arr_banner[i]);
+//            })
+        }
+        $('.carousel-inner').html(html);
+        $('.carousel-indicators').html(html_indicators);
+    }
+    function oldA(){
+        var lang=localStorage.getItem('language');
+        var oldActivityList=JSON.parse(localStorage.getItem('oldActivityList'));
+        var language = window.localStorage.language;
+        var  No_activity=language=='zh-CN'?'暂无活动':'No promotion now';
+        var html='';
+        if(oldActivityList.length==0){
+            html+=`<div style="font-size: 18px;margin:100px auto;text-align: center " data-activityId='xyz'>${No_activity}</div>`;
+        }else{
+            for(var oldA of oldActivityList){
+                var photo=lang=='zh-CN'?'chinesePhoto/'+oldA.chinesePhoto:'englishPhoto/'+oldA.englishPhoto;
+                var name=lang=='zh-CN'?oldA.chineseName:oldA.englishName;
+                var detail=lang=='zh-CN'?oldA.chineseIntroduce:oldA.englishIntroduce;
+                var starTime=timestampToTime(oldA.startDateTime);
+//                var endTime=timestampToTime(oldA.endDateTime);
+//                var photo_big=lang=='zh-CN'?oldA.chineseBigPhoto:oldA.englishBigPhoto;
+                var img_src=config.domain+'/resource/images/'+photo;
+                html+=`
+                                            <div data-activityId=${oldA.activityId}>
+                                                <img src=${img_src} alt=""/>
+                                                <p>${name}</p>
+                                                <p>${detail}</p>
+                                                <p><img src="" alt=""class="time_icon"/>${starTime} 起</p>
+                                                <span class="going_icon"></span>
+                                           </div>
+                                        `;
+            }
+        }
+        $(".event_content").html(html);
+        $(".event_content>div").each(function(){
+            var $tar=$(this);
+            var activityId=$tar.attr("data-activityId");
+            if(activityId=='xyz'){
+                return;
+            }
+//            var myWeb='https://www.bhpcash.io/bhp/Activity_details.html?activityId='+activityId;
+//            var myWeb='/bhp/Activity_details.html?activityId='+activityId;
+            $tar.click(function(){
+                var myWeb=config.myWeb+'/Activity_details.html?activityId='+activityId;
+                console.log(myWeb);
+                window.open(myWeb);
+            });
+        });
+    }
+    function initActivity() {
+        var token=window.localStorage.token;
+        var language=window.localStorage.language;
+        $.ajax({
+            type:"GET",
+            url:config.domain+"/api/v2/user/activity_list",
+            data:{
+                token:token,
+                language:language
+            },
+            dataType:"json",
+            success:function(res){
+                console.log("这是_最新活动页面");
+                console.log(res);
+                if(res.code==200) {
+                    var newActivityList=res.obj.newActivityList;
+                    var oldActivityList=res.obj.oldActivityList;
+                    var html='';
+                    if(newActivityList.length==0||oldActivityList.length==0){
+                        html=`
+                            <div style="padding-top:130px; ">
+                                <img src='img/default3.png'/>
+                                <p style="font-size:24px" class="activity_error_tips">${$.i18n.prop('activity_error_tips')}</p>
+                            </div>
+                        `;
+                        $('.activity_main').html(html);
+                        return;
+                    }
+                    else{
+                        html+=`
+                             <div class="container banner_carousel">
+                               <div id="ad9" class="carousel" data-ride="carousel" data-interval="1000" data-pause="null">
+                                    <div class="carousel-inner"></div>
+                                     <ul class="carousel-indicators"></ul>
+                                </div>
+                             </div>
+                             <section>
+                                    <div class="event_container">
+                                    <div class="event_item clearfix">
+                                    <div class="left">
+                                    <a class="active string_Live_activities"></a>
+                                    </div>
+                                    <div class="right">
+                                    <a class="old string_Past_activities"></a>
+                                    </div>
+                                    </div>
+                                    <div class="event_content"></div>
+                                    </div>
+                                </section>
+                        `;
+                        $('.activity_main').html(html);
+                        banner_carousel();
+                    }
+                    localStorage.setItem('newActivityList',JSON.stringify(newActivityList));
+                    localStorage.setItem('oldActivityList',JSON.stringify(oldActivityList));
+                    var language = window.localStorage.language;
+                    if(!language){
+                        window.localStorage.language='zh-CN';
+                        language='zh-CN';
+                    }
+                    loadProperties(language);
+                    newA();
+                    banner_carousel();
+                    $("#ad9").carousel();
+                    //活动点击切换 显示
+                    $(".event_item>div>a").each(function(){
+                        var $tar=$(this);
+                        $tar.click(function(){
+                            $tar.addClass("active").parent().siblings().children().removeClass("active");
+                            if($tar.hasClass("old")){
+                                oldA();
+                            }else{
+                                newA();
+                            }
+                        });
+                    });
+                }
+                else{
+                    alert(res.msg);
+                }
+            },
+            error:function(){
+                alert($.i18n.prop('network_error'));
+                window.location.reload();
+            }
+        });
+    }
+    $(function(){
+        isLogin();
+        initActivity();
+    })
+</script>
+</body>
+</html>

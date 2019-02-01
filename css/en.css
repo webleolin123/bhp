@@ -1,0 +1,90 @@
+/*myAssets.html 操作css*/
+.table_container>table>tbody>tr>td>a:nth-child(2){
+    margin-left: 0;
+    margin-right: 0;
+}
+/*myAssets.html 操作css ____ end*/
+
+
+/*bibiFinance.html//up_bibiFiance.html//change_details.html  操作css*/
+.dui_container>form>div label,
+.dui_container>form>div>span>b.string_Available_balance,
+.dui_container>form>div>span>b.string_Exchange_amount,
+.dui_container>form>div>span>b.Transaction_password{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+/*withdrawCoin.html  操作css*/
+.dui_container>form>div label,
+.dui_container>form>div>span>b.string_Available_balance,
+.dui_container>form>div>span>b.Withdrawal_Amount,
+.dui_container>form>div>span>b.Transaction_password{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+.dui_container>form>div>span>b.string_Available_balance{
+
+}
+/*ID_authen_h.html// ID_authen_s.html 操作css*/
+.personal_setting_info>form>div>label:first-child,.upload_box>div:first-child>label{
+    width: 110px;
+}
+
+div.title_left>span.string_Login_password,
+div.title_left>span.string_Transaction_password,
+div.title_left>span.string_Push{
+    display: inline-block;
+    width: 140px;
+}
+/*transactionPassword_modify.html// transactionPassword_settings.html 操作css*/
+
+.transaction_modify_info>form>div>label:first-child{
+    width: 220px;
+}
+.transaction_modify_info>form>input{
+    margin-left: 162px;
+}
+
+/*超级节点页面*/
+.super_node_input_container>div>label{
+    width: 130px!important;
+    text-align: right!important;
+}
+/*注册页 密码提示*/
+.user_register>div:nth-child(4)>a{
+   padding-left: 30%;
+}
+/*注册条款*/
+.user_register>div:nth-child(7){
+    padding-left: 120px;
+    width: 500px;
+}
+/*登录label标签宽度*/
+.user_login>div>label{
+    width: 66px;
+}
+/*登录按钮宽度*/
+.user_login>div:last-child{
+    width: 398px;
+}
+/*忘记密码提示*/
+.user_login>div:nth-child(4){
+    width: 366px;
+}
+/*注册label标签宽度*/
+.user_register>div>label{
+    width: 100px;
+}
+/*注册按钮宽度*/
+.user_register>div:last-child{
+    width: 412px;
+}
+/*重置label标签宽度*/
+.user_reset>div>label{
+    width: 120px;
+}
+.user_reset>div:nth-child(4){
+    width: 405px;
+}
